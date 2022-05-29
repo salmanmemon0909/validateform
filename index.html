@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html ng-app="ngApp" ng-controller="controller" lang="en">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -17,383 +17,33 @@
     <!-- Style -->
     <link rel="stylesheet" href="css/style.css">
 
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+
+<!-- angular -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
     <title>Sign Up Form</title>
 
 
 
+
 <script type="text/javascript">
-	
 
+var app = angular.module('ngApp', []);
 
+app.controller('controller', function ($scope) {
 
-function formsub(){
+$scope.formsub = function () {
 
-var returnval = true;
-var fName = document.getElementById('fname').value
+$scope.msg = alert("Form submitted");
 
-// alert(fName);
+};
 
-
-
-
-// for first name
-
-if (!isNaN(fName)) {
-
-document.getElementById('ferror').innerHTML = "Number is Not Allowed";
-document.getElementById("ferror").style.backgroundColor = "#c51244";
-document.getElementById("ferror").style.color = "white";
-document.getElementById("ferror").style.padding = "10px";
-document.getElementById("ferror").style.position = "relative";
-document.getElementById("ferror").style.display = "inline-block";
-document.getElementById("ferror").style.margin = "1% 0";
-returnval = false;
-
-}
-
-
-
-if (fName.length <2) {
-
-document.getElementById('ferror').innerHTML = "Name Is Too Short";
-document.getElementById("ferror").style.backgroundColor = "#c51244";
-document.getElementById("ferror").style.color = "white";
-document.getElementById("ferror").style.padding = "10px";
-document.getElementById("ferror").style.position = "relative";
-document.getElementById("ferror").style.display = "inline-block";
-document.getElementById("ferror").style.margin = "1% 0";
-returnval = false;
-
-}
-
-
-if (fName.length >25) {
-
-document.getElementById('ferror').innerHTML = "Name Is Too Long";
-document.getElementById("ferror").style.backgroundColor = "#c51244";
-document.getElementById("ferror").style.color = "white";
-document.getElementById("ferror").style.padding = "10px";
-document.getElementById("ferror").style.position = "relative";
-document.getElementById("ferror").style.display = "inline-block";
-document.getElementById("ferror").style.margin = "1% 0";
-returnval = false;
-
-}
-
-if (fName.length <1) {
-
-document.getElementById('ferror').innerHTML = "Please Insert Your Name";
-document.getElementById("ferror").style.backgroundColor = "#c51244";
-document.getElementById("ferror").style.color = "white";
-document.getElementById("ferror").style.padding = "10px";
-document.getElementById("ferror").style.position = "relative";
-document.getElementById("ferror").style.display = "inline-block";
-document.getElementById("ferror").style.margin = "1% 0";
-returnval = false;
-
-}
-
-
-// first name work end here
-
-
-
-
-
-// last name work
-var lName = document.getElementById('lname').value
-
-
-if (!isNaN(lName)) {
-
-document.getElementById('lerror').innerHTML = "Number is Not Allowed";
-document.getElementById("lerror").style.backgroundColor = "#c51244";
-document.getElementById("lerror").style.color = "white";
-document.getElementById("lerror").style.padding = "10px";
-document.getElementById("lerror").style.position = "relative";
-document.getElementById("lerror").style.display = "inline-block";
-document.getElementById("lerror").style.margin = "1% 0";
-returnval = false;
-
-}
-
-
-if (lName.length <2) {
-
-document.getElementById('lerror').innerHTML = "Name Is Too Short";
-document.getElementById("lerror").style.backgroundColor = "#c51244";
-document.getElementById("lerror").style.color = "white";
-document.getElementById("lerror").style.padding = "10px";
-document.getElementById("lerror").style.position = "relative";
-document.getElementById("lerror").style.display = "inline-block";
-document.getElementById("lerror").style.margin = "1% 0";
-returnval = false;
-
-}
-
-
-if (lName.length >25) {
-
-document.getElementById('lerror').innerHTML = "Name Is Too Long";
-document.getElementById("lerror").style.backgroundColor = "#c51244";
-document.getElementById("lerror").style.color = "white";
-document.getElementById("lerror").style.padding = "10px";
-document.getElementById("lerror").style.position = "relative";
-document.getElementById("lerror").style.display = "inline-block";
-document.getElementById("lerror").style.margin = "1% 0";
-returnval = false;
-
-}
-
-if (lName.length <1) {
-
-document.getElementById('lerror').innerHTML = "Please Insert Your Last Name";
-document.getElementById("lerror").style.backgroundColor = "#c51244";
-document.getElementById("lerror").style.color = "white";
-document.getElementById("lerror").style.padding = "10px";
-document.getElementById("lerror").style.position = "relative";
-document.getElementById("lerror").style.display = "inline-block";
-document.getElementById("lerror").style.margin = "1% 0";
-returnval = false;
-
-}
-
-
-// last name end here
-
-
-
-
-// for email
-
-var emailc = document.getElementById('email').value
-var validateemail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
-
-if (emailc.length <2) {
-
-document.getElementById('eerror').innerHTML = "email is not correct";
-document.getElementById("eerror").style.backgroundColor = "#c51244";
-document.getElementById("eerror").style.color = "white";
-document.getElementById("eerror").style.padding = "10px";
-document.getElementById("eerror").style.position = "relative";
-document.getElementById("eerror").style.display = "inline-block";
-document.getElementById("eerror").style.margin = "1% 0";
-returnval = false;
-
-}
-
-
-if (emailc.length >50) {
-
-document.getElementById('eerror').innerHTML = "Email Is Too Long";
-document.getElementById("eerror").style.backgroundColor = "#c51244";
-document.getElementById("eerror").style.color = "white";
-document.getElementById("eerror").style.padding = "10px";
-document.getElementById("eerror").style.position = "relative";
-document.getElementById("eerror").style.display = "inline-block";
-document.getElementById("eerror").style.margin = "1% 0";
-returnval = false;
-
-}
-
-
-
-if (!emailc.match(validateemail)) {
-
-document.getElementById('eerror').innerHTML = "Please Insert Your correct email";
-document.getElementById("eerror").style.backgroundColor = "#c51244";
-document.getElementById("eerror").style.color = "white";
-document.getElementById("eerror").style.padding = "10px";
-document.getElementById("eerror").style.position = "relative";
-document.getElementById("eerror").style.display = "inline-block";
-document.getElementById("eerror").style.margin = "1% 0";
-returnval = false;
-
-}
-
-if (emailc.length <1) {
-
-document.getElementById('eerror').innerHTML = "Please Insert Your Email";
-document.getElementById("eerror").style.backgroundColor = "#c51244";
-document.getElementById("eerror").style.color = "white";
-document.getElementById("eerror").style.padding = "10px";
-document.getElementById("eerror").style.position = "relative";
-document.getElementById("eerror").style.display = "inline-block";
-document.getElementById("eerror").style.margin = "1% 0";
-returnval = false;
-
-}
-
-
-
-
-// email work end here
-
-
-
-
-
-
-
-// for contact
-
-var contactc = document.getElementById('contact').value
-
-if (contactc.length <2) {
-
-document.getElementById('cerror').innerHTML = "Number is not correct";
-document.getElementById("cerror").style.backgroundColor = "#c51244";
-document.getElementById("cerror").style.color = "white";
-document.getElementById("cerror").style.padding = "10px";
-document.getElementById("cerror").style.position = "relative";
-document.getElementById("cerror").style.display = "inline-block";
-document.getElementById("cerror").style.margin = "1% 0";
-returnval = false;
-
-}
-
-
-if (contactc.length >15) {
-
-document.getElementById('cerror').innerHTML = "Number Is Too Long";
-document.getElementById("cerror").style.backgroundColor = "#c51244";
-document.getElementById("cerror").style.color = "white";
-document.getElementById("cerror").style.padding = "10px";
-document.getElementById("cerror").style.position = "relative";
-document.getElementById("cerror").style.display = "inline-block";
-document.getElementById("cerror").style.margin = "1% 0";
-returnval = false;
-
-}
-
-
-
-if (contactc.length <1) {
-
-document.getElementById('cerror').innerHTML = "Please Insert Your Number";
-document.getElementById("cerror").style.backgroundColor = "#c51244";
-document.getElementById("cerror").style.color = "white";
-document.getElementById("cerror").style.padding = "10px";
-document.getElementById("cerror").style.position = "relative";
-document.getElementById("cerror").style.display = "inline-block";
-document.getElementById("cerror").style.margin = "1% 0";
-returnval = false;
-
-}
-
-
-//contact work end here
-
-
-
-
-
-// for password
-
-var passwordc = document.getElementById('password').value
-var must = /^(?=.*\p{Ll})(?=.*\p{Lu})(?=.*[\d|@#$!%*?&])[\p{L}\d@#$!%*?&]{8,96}$/gmu
-
-if (passwordc.length <2) {
-
-document.getElementById('perror').innerHTML = "your password is not strong";
-document.getElementById("perror").style.backgroundColor = "#c51244";
-document.getElementById("perror").style.color = "white";
-document.getElementById("perror").style.padding = "10px";
-document.getElementById("perror").style.position = "relative";
-document.getElementById("perror").style.display = "inline-block";
-document.getElementById("perror").style.margin = "1% 0";
-returnval = false;
-
-}
-
-
-if (passwordc.length >40) {
-
-document.getElementById('perror').innerHTML = "password Is Too Long";
-document.getElementById("perror").style.backgroundColor = "#c51244";
-document.getElementById("perror").style.color = "white";
-document.getElementById("perror").style.padding = "10px";
-document.getElementById("perror").style.position = "relative";
-document.getElementById("perror").style.display = "inline-block";
-document.getElementById("perror").style.margin = "1% 0";
-returnval = false;
-
-}
-
-
-if (!passwordc.match(must)) {
-
-document.getElementById('perror').innerHTML = "password must contain uppercase, lowecase and special characters";
-document.getElementById("rperror").style.backgroundColor = "#c51244";
-document.getElementById("perror").style.color = "white";
-document.getElementById("perror").style.padding = "10px";
-document.getElementById("perror").style.position = "relative";
-document.getElementById("perror").style.display = "inline-block";
-document.getElementById("perror").style.margin = "1% 0";
-returnval = false;
-
-}
-
-
-if (passwordc.length <1) {
-
-document.getElementById('perror').innerHTML = "Please Insert Password";
-document.getElementById("perror").style.backgroundColor = "#c51244";
-document.getElementById("perror").style.color = "white";
-document.getElementById("perror").style.padding = "10px";
-document.getElementById("perror").style.position = "relative";
-document.getElementById("perror").style.display = "inline-block";
-document.getElementById("perror").style.margin = "1% 0";
-returnval = false;
-
-}
-
-
-//password work end here
-
-
-
-// for re-password
-
-var passwordrc = document.getElementById('re-password').value
-
-if (passwordc != passwordrc) {
-
-document.getElementById('rperror').innerHTML = "your password is not match";
-document.getElementById("rperror").style.backgroundColor = "#c51244";
-document.getElementById("rperror").style.color = "white";
-document.getElementById("rperror").style.padding = "10px";
-document.getElementById("rperror").style.position = "relative";
-document.getElementById("rperror").style.display = "inline-block";
-document.getElementById("rperror").style.margin = "1% 0";
-returnval = false;
-}
-
-if (passwordrc.length <1) {
-
-document.getElementById('rperror').innerHTML = "Please insert password";
-document.getElementById("rperror").style.backgroundColor = "#c51244";
-document.getElementById("rperror").style.color = "white";
-document.getElementById("rperror").style.padding = "10px";
-document.getElementById("rperror").style.position = "relative";
-document.getElementById("rperror").style.display = "inline-block";
-document.getElementById("rperror").style.margin = "1% 0";
-
-returnval = false;
-
-}
-
-
-
-//password work end here
-
-
-
-return returnval;
-}
-
+});
 
 </script>
+
 
 
 
@@ -414,44 +64,82 @@ return returnval;
           <div class="col-md-7 py-5">
             <h3>Register</h3>
             <p class="mb-4">Lorem ipsum dolor sit amet elit. Sapiente sit aut eos consectetur adipisicing.</p>
-            <form action="#" method="post" onsubmit="return formsub();">
+
+
+
+
+            <form name="myForm" novalidate ng-submit="myForm.$valid && formsub();">
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group first">
                     <label for="fname">First Name</label>
-                    <input type="text" class="form-control" placeholder="e.g. Salman" id="fname">
-                    <span id="ferror"></span>
-                  </div>    
+                    <input type="text" name="firstName" ng-model="firstName" class="form-control" placeholder="e.g. Salman" ng-pattern="/^[a-zA-Z. ]{3,20}$/" required>
+
+                   <span style="color:Red" ng-show="myForm.firstName.$error.required"> Required! </span>
+
+                  <span style="color:Red" class="fa fa-times" ng-show="myForm.firstName.$dirty&&myForm.firstName.$error.pattern">&nbsp;Only Alphabets Allowed, minimum 3 Characters</span>
+
+     <span class="fa fa-check-circle check-circle" ng-show="myForm.firstName.$valid"></span>
+                    
+                
+
+                </div>    
+
                 </div>
                 <div class="col-md-6">
                   <div class="form-group first">
                     <label for="lname">Last Name</label>
-                    <input type="text" class="form-control" placeholder="e.g. Memon" id="lname">
-                     <span id="lerror"></span>
+                    <input type="text" class="form-control" name="lastName" ng-model="lastName" required placeholder="e.g. Memon" ng-pattern="/^[a-zA-Z. ]{3,20}$/">
+
+          
+                  <span style="color:Red" class="fa fa-times" ng-show="myForm.lastName.$dirty&&myForm.lastName.$error.pattern">&nbsp;Only Alphabets Allowed, minimum 3 Characters</span>
+
+     <span class="fa fa-check-circle check-circle" ng-show="myForm.lastName.$valid"></span>
                   </div>    
                 </div>
               </div>
+
+
+
               <div class="row">
                 <div class="col-md-12">
                   <div class="form-group first">
                     <label for="email">Email Address</label>
-                    <input type="text" class="form-control" placeholder="e.g. salmanmemon0909@gmail.com" id="email">
-                    <span id="eerror"></span>
+                    <input type="text" name="email" ng-model="email" required class="form-control" placeholder="e.g. salmanmemon0909@gmail.com" ng-pattern="/^[a-zA-Z0-9.]{3,}[@][a-zA-Z0-9]{3,}[.][a-zA-Z.]{2,6}$/">
+
+                    <span style="color:Red" ng-show="myForm.email.$error.required"> Required! </span>
+
+                  <span style="color:Red" class="fa fa-times" ng-show="myForm.email.$dirty&&myForm.email.$error.pattern">&nbsp;Invalid Email</span>
+
+     <span class="fa fa-check-circle check-circle" ng-show="myForm.email.$valid"></span>
+                    
                   </div>    
                 </div>
               </div>
+
+
+
+
+
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group first">
                     <label for="lname">Phone Number</label>
-                    <input type="text" class="form-control" placeholder="+923172761910" id="contact">
-                       <span id="cerror"></span>
+                    <input type="text" class="form-control" placeholder="+923172761910" name="number" ng-model="number" required ng-pattern="/^[+][0-9]{0,13}$/" >
+                       
+
+                  <span style="color:Red" class="fa fa-times" ng-show="myForm.number.$dirty&&myForm.number.$error.pattern">&nbsp;Invalid number</span>
+
+     <span class="fa fa-check-circle check-circle" ng-show="myForm.number.$valid"></span>
                   </div>    
                 </div>
+
+
+
                 <div class="col-md-6">
                   <div class="form-group first">
                   	<label for="lname">Select Country</label>
-                    <input type="text" class="form-control" id="contry-picker">
+                    <input type="text" class="form-control" id="contry-picker" required>
                   </div>    
                 </div>
               </div>
@@ -460,21 +148,35 @@ return returnval;
               
                   <div class="form-group last mb-3">
                     <label for="password">Password</label>
-                    <input type="password" class="form-control" placeholder="Your Password" id="password">
-                    <span id="perror"></span>
+                    <input type="password" class="form-control"  placeholder="Your Password" required name="password" ng-model="password" ng-pattern="/^[a-zA-z0-9@!#$%^&*()?<>]{10,40}$/">
+                     <span style="color:Red" ng-show="myForm.password.$error.required"> Required! </span>
+
+                  <span style="color:Red" class="fa fa-times" ng-show="myForm.password.$dirty&&myForm.password.$error.pattern">&nbsp;minimum password length 10</span>
+
+     <span class="fa fa-check-circle check-circle" ng-show="myForm.password.$valid"></span>
                   </div>
                 </div>
-                <div class="col-md-6">
+             <!--    <div class="col-md-6">
               
                   <div class="form-group last mb-3">
                     <label for="re-password">Re-type Password</label>
-                    <input type="password" class="form-control" placeholder="Re-Enter Your Password" id="re-password">
-                    <span id="rperror"></span>
+
+                    <input type="password" class="form-control" placeholder="Re-Enter Your Password" required name="repassword" ng-model="repassword" >
+
+                     <span style="color:Red" ng-show="myForm.repassword.$error.required"> Required! </span>
+                
+                  <span style="color:Red" class="fa fa-times" ng-show="myForm.repassword.$dirty&&myForm.repassword.$error">&nbsp;password not matched</span>
+
+     <span class="fa fa-check-circle check-circle" ng-show="myForm.repassword.$valid"></span>
+
+
                   </div>
-                </div>
+                </div> -->
+
+                
               </div>
               
-              <input type="submit" value="Register" class="btn px-5 btn-primary">
+              <input type="submit" ng-disabled="myForm.$invalid" value="Register" class="btn px-5 btn-primary">
 
             </form>
           </div>
@@ -504,6 +206,7 @@ $(document).ready(function(){
 });
 
 </script>
+
 
 
 

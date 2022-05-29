@@ -102,3 +102,12 @@ h2 {
   top: -10px; 
 }
 
+
+.check-circle
+{
+  /*position: absolute;
+  margin-top: -2rem;
+  margin-left: 15rem;*/
+ color: green;
+}
+
